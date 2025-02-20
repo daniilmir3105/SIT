@@ -32,6 +32,7 @@ class UNetDecoder(nn.Module):
 
 class CombinedModel(nn.Module):
     def __init__(self, pretrained=False, swin_model_name='swin_tiny_patch4_window7_224', output_size=(800, 800)):
+    # def __init__(self, pretrained=False, swin_model_name='swin_tiny_patch4_window7_224_100', output_size=(800, 800)):
         super(CombinedModel, self).__init__()
         self.encoder = create_model(swin_model_name, pretrained=False)
         self.encoder.head = nn.Identity()
